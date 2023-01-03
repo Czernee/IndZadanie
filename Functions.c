@@ -23,3 +23,11 @@ char* fread_string(FILE* file)
     return string;
     }
 
+void check_file(FILE* file)
+    {
+    if (file == NULL)
+        {
+        printf("This file doesn't exist\n");
+        exit(1);
+        }
+    }

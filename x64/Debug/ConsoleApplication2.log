@@ -1,3 +1,2 @@
 ﻿  main.c
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(10,3): warning C4013: exit: нет определения; предполагается "extern" с возвратом типа "int"
   ConsoleApplication2.vcxproj -> D:\VisualStudio\IZ2\ConsoleApplication2\x64\Debug\ConsoleApplication2.exe
