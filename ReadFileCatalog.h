@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Read_Catalog(const char* file_name);
+/*void Read_Catalog(const char* file_name);
 
 typedef struct Catalog {
 	char name[21];
@@ -30,3 +30,4 @@ void Read_Catalog(const char* file_name) {
 	free(sCatalog);
 
 }
+*/
