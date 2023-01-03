@@ -1,21 +1,20 @@
 ﻿#include <stdio.h>
-#include "ReadFileCatalog.h"
+#include "Functions.h"
+
 
 int main()
     {
-    FILE* fout = fopen("output.txt", "w");
-    // Нужно посчитать 𝑉𝑖 = 𝑇𝑖 ∙ 𝑁𝑖
-	if (!fout)
+    FILE* finCatalog = fopen("Catalog.txt", "r");
+
+	if (!finCatalog)
 		exit(1);
 
-    Read_Catalog("Catalog.exe");
+    char* str = fread_string(finCatalog);
+    char* str1 = fread_string(finCatalog);
 
-
-
-
-
+    printf("%s\n%s\n", str, str1);
     
+    fclose(finCatalog);
 	return 0;
-    fclose(fout);
     }
 
