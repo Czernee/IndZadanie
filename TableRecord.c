@@ -61,7 +61,7 @@ char** separate_TableRecord_string(char* str)
 	char* ShortName = strtok(NULL, " ");
 	info[1] = (char*)calloc(strlen(ShortName) + 1, sizeof(char));
 	char* AudHours = strtok(NULL, "");
-	info[2] = (int*)calloc(1, sizeof(int));
+	info[2] = (char*)calloc(strlen(AudHours) + 1, sizeof(char));
 	strcpy(info[0], FamilyIO);
 	strcpy(info[1], ShortName);
 	strcpy(info[2], AudHours);

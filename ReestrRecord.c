@@ -12,10 +12,12 @@ ReestrRecord* create_ReestrRecord()
 void init_ReestrRecord(ReestrRecord* structure, char* str)
 	{
 	structure->ShortName = (char*)calloc(0, sizeof(char));
+	structure->RealizationBeginning = (char*)calloc(0, sizeof(char));
+	structure->RealizationEnding = (char*)calloc(0, sizeof(char));
 	char** info = separate_ReestrRecord_string(str);
 	set_ReestrRecord_shortname(structure, info[0]);
-	set_ReestrRecord_realizationbeginning(structure, atof(info[1]));
-	set_ReestrRecord_realizationending(structure, atof(info[2]));
+	set_ReestrRecord_realizationbeginning(structure, info[1]);
+	set_ReestrRecord_realizationending(structure, info[2]);
 	set_ReestrRecord_price(structure, atoi(info[3]));
 	set_ReestrRecord_studentsamount(structure, atoi(info[4]));
 	set_ReestrRecord_groupsamount(structure, atoi(info[5]));
@@ -29,12 +31,12 @@ char* get_ReestrRecord_shortname(ReestrRecord* structure)
 	return structure->ShortName;
 	}
 
-float get_ReestrRecord_realizationbeginning(ReestrRecord* structure)
+char* get_ReestrRecord_realizationbeginning(ReestrRecord* structure)
 	{
 	return structure->RealizationBeginning;
 	}
 
-float get_ReestrRecord_realizationending(ReestrRecord* structure)
+char* get_ReestrRecord_realizationending(ReestrRecord* structure)
 	{
 	return structure->RealizationEnding;
 	}
@@ -60,14 +62,16 @@ void set_ReestrRecord_shortname(ReestrRecord* structure, char* ShortName)
 	strcpy(structure->ShortName, ShortName);
 	}
 
-void set_ReestrRecord_realizationbeginning(ReestrRecord* structure, double RealizationBeginning)
+void set_ReestrRecord_realizationbeginning(ReestrRecord* structure, char* RealizationBeginning)
 	{
-	structure->RealizationBeginning = RealizationBeginning;
+	structure->RealizationBeginning = (char*)realloc(structure->RealizationBeginning, (strlen(RealizationBeginning) + 1) * sizeof(char));
+	strcpy(structure->RealizationBeginning, RealizationBeginning);
 	}
 
-void set_ReestrRecord_realizationending(ReestrRecord* structure, double RealizationEnding)
+void set_ReestrRecord_realizationending(ReestrRecord* structure, char* RealizationEnding)
 	{
-	structure->RealizationEnding = RealizationEnding;
+	structure->RealizationEnding = (char*)realloc(structure->RealizationEnding, (strlen(RealizationEnding) + 1) * sizeof(char));
+	strcpy(structure->RealizationEnding, RealizationEnding);;
 	}
 
 void set_ReestrRecord_price(ReestrRecord* structure, int Price)
@@ -91,15 +95,15 @@ char** separate_ReestrRecord_string(char* str)
 	char* ShortName = strtok(str, " ");
 	info[0] = (char*)calloc(strlen(ShortName) + 1, sizeof(char));
 	char* RealizationBeginning = strtok(NULL, " ");
-	info[1] = (double*)calloc(1, sizeof(double));
+	info[1] = (char*)calloc(strlen(RealizationBeginning) + 1, sizeof(char));
 	char* RealizationEnding = strtok(NULL, " ");
-	info[2] = (double*)calloc(1, sizeof(double));
+	info[2] = (char*)calloc(strlen(RealizationEnding) + 1, sizeof(char));
 	char* Price = strtok(NULL, " ");
-	info[3] = (int*)calloc(1, sizeof(int));
+	info[3] = (char*)calloc(strlen(Price) + 1, sizeof(char));
 	char* StudentsAmount = strtok(NULL, " ");
-	info[4] = (int*)calloc(1, sizeof(int));
+	info[4] = (char*)calloc(strlen(StudentsAmount) + 1, sizeof(char));
 	char* GroupsAmount = strtok(NULL, "");
-	info[5] = (int*)calloc(1, sizeof(int));
+	info[5] = (char*)calloc(strlen(GroupsAmount) + 1, sizeof(char));
 	strcpy(info[0], ShortName);
 	strcpy(info[1], RealizationBeginning);
 	strcpy(info[2], RealizationEnding);
