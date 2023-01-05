@@ -1,7 +1,5 @@
 #include "CatalogRecord.h"
 #include "Functions.h"
-#include "CatalogRecord.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -70,9 +68,13 @@ char** separate_CatalogRecord_string(char* str)
 	{
 	char** info = (char**)calloc(4, sizeof(char*));
 	char* ShortName = strtok(str, " ");
+	info[0] = (char*)calloc(strlen(ShortName) + 1, sizeof(char));
 	char* Hours = strtok(NULL, " ");
+	info[1] = (int*)calloc(1, sizeof(int));
 	char* AkademHours = strtok(NULL, " ");
+	info[2] = (int*)calloc(1, sizeof(int));
 	char* FullName = strtok(NULL, "");
+	info[3] = (char*)calloc(strlen(FullName) + 1, sizeof(char));
 	strcpy(info[0], ShortName);
 	strcpy(info[1], Hours);
 	strcpy(info[2], AkademHours);
