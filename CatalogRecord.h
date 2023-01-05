@@ -1,7 +1,6 @@
 #ifndef CATALOGRECORD_H
 #define CATALOGRECORD_H
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -14,7 +13,7 @@ typedef struct CatalogRecord
 	} CatalogRecord;
 
 CatalogRecord* create_CatalogRecord();
-void init_CatalogRecord(char* str);
+void init_CatalogRecord(CatalogRecord* structure, char* str);
 char* get_CatalogRecord_shortname(CatalogRecord* structure);
 int get_CatalogRecord_hours(CatalogRecord* structure);
 int get_CatalogRecord_akademhours(CatalogRecord* structure);

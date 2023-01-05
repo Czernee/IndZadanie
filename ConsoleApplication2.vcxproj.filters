@@ -24,12 +24,24 @@
     <ClCompile Include="CatalogRecord.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ReestrRecord.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="TableRecord.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Functions.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="CatalogRecord.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ReestrRecord.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="TableRecord.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

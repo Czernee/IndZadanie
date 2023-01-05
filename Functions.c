@@ -4,7 +4,6 @@
 
 char* fread_string(FILE* file) 
     {
-
     char* string = (char*)calloc(1, sizeof(char));
     size_t length = 1;
     string[0] = '\0';

@@ -130,10 +130,14 @@
     <ClCompile Include="CatalogRecord.c" />
     <ClCompile Include="Functions.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="ReestrRecord.c" />
+    <ClCompile Include="TableRecord.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CatalogRecord.h" />
     <ClInclude Include="Functions.h" />
+    <ClInclude Include="ReestrRecord.h" />
+    <ClInclude Include="TableRecord.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
