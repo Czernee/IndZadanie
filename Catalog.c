@@ -5,11 +5,16 @@
 #include <stdio.h>
 #include <string.h>
 
+//---------------------------------------------------------------------------------
+// Функция создает массив структур CatalogRecord (массив записей файла Catalog.txt)
 Catalog* create_Catalog()
 	{
 	return (Catalog*)calloc(1, sizeof(Catalog));
 	}
 
+//---------------------------------------------------------------------------------
+// Функция "инициализирует" массив структур
+// Вх. данные: файл с записями, структура, на основании которой будет создаваться массив
 void init_Catalog(FILE* file, Catalog* structure)
 	{
 	char* koefs = fread_string(file);
@@ -29,6 +34,9 @@ void init_Catalog(FILE* file, Catalog* structure)
 		}
 	}
 
+//---------------------------------------------------------------------------------
+// Функция добавляет запись CatalogRecord
+// Вх. данные: структура, в которую добавляется запись, запись
 void add_CatalogRecord(Catalog* structure, CatalogRecord* record)
 	{
 	structure->length++;
@@ -36,6 +44,9 @@ void add_CatalogRecord(Catalog* structure, CatalogRecord* record)
 	structure->catalog[structure->length - 1] = record;
 	}
 
+//---------------------------------------------------------------------------------
+// Функция освобождает память Catalog
+// Вх. данные: структура
 void delete_Catalog(Catalog* structure)
 	{
 	free(structure->catalog);

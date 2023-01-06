@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+//--------------------------------------------------
+// ‘ункци€ считывает содержимое файла
+// ¬х. данные: файл
 char* fread_string(FILE* file) 
     {
     char* string = (char*)calloc(1, sizeof(char));
@@ -22,7 +25,11 @@ char* fread_string(FILE* file)
         }
     return string;
     }
+//--------------------------------------------------
 
+//--------------------------------------------------
+// ‘ункци€ провер€ет, существует ли файл
+// ¬х. данные: файл
 void check_file(FILE* file)
     {
     if (file == NULL)
@@ -31,7 +38,11 @@ void check_file(FILE* file)
         exit(1);
         }
     }
+//--------------------------------------------------
 
+//--------------------------------------------------
+// ‘ункци€ раздел€ет дату формата "MM.YYYY" на мес€ц и год
+// ¬х. данные: дата 
 char* separate_date(char* date)
     {
     char** info = (char**)calloc(2, sizeof(char*));
@@ -43,3 +54,4 @@ char* separate_date(char* date)
     strcpy(info[1], year);
     return info;
     }
+//--------------------------------------------------
