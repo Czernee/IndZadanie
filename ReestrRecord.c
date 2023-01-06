@@ -12,18 +12,30 @@ ReestrRecord* create_ReestrRecord()
 void init_ReestrRecord(ReestrRecord* structure, char* str)
 	{
 	structure->ShortName = (char*)calloc(0, sizeof(char));
-	structure->RealizationBeginning = (char*)calloc(0, sizeof(char));
-	structure->RealizationEnding = (char*)calloc(0, sizeof(char));
+	structure->RealizationBeginningMonth = (char*)calloc(0, sizeof(char));
+	structure->RealizationBeginningYear = (char*)calloc(0, sizeof(char));
+	structure->RealizationEndingMonth = (char*)calloc(0, sizeof(char));
+	structure->RealizationEndingYear = (char*)calloc(0, sizeof(char));
 	char** info = separate_ReestrRecord_string(str);
 	set_ReestrRecord_shortname(structure, info[0]);
-	set_ReestrRecord_realizationbeginning(structure, info[1]);
-	set_ReestrRecord_realizationending(structure, info[2]);
+	char** date = separate_date(info[1]);
+	set_ReestrRecord_realization_beginning_month(structure, date[0]);
+	set_ReestrRecord_realization_beginning_year(structure, date[1]);
+	char** date1 = separate_date(info[2]);
+	set_ReestrRecord_realization_ending_month(structure, date1[0]);
+	set_ReestrRecord_realization_ending_year(structure, date1[1]);
 	set_ReestrRecord_price(structure, atoi(info[3]));
-	set_ReestrRecord_studentsamount(structure, atoi(info[4]));
-	set_ReestrRecord_groupsamount(structure, atoi(info[5]));
+	set_ReestrRecord_students_amount(structure, atoi(info[4]));
+	set_ReestrRecord_groups_amount(structure, atoi(info[5]));
 	for (int i = 0; i < 6; i++)
 		free(info[i]);
 	free(info);
+	for (int i = 0; i < 2; i++)
+		free(date[i]);
+	for (int i = 0; i < 2; i++)
+		free(date1[i]);
+	free(date);
+	free(date1);
 	}
 
 char* get_ReestrRecord_shortname(ReestrRecord* structure)
@@ -31,14 +43,24 @@ char* get_ReestrRecord_shortname(ReestrRecord* structure)
 	return structure->ShortName;
 	}
 
-char* get_ReestrRecord_realizationbeginning(ReestrRecord* structure)
+char* get_ReestrRecord_realization_beginning_month(ReestrRecord* structure)
 	{
-	return structure->RealizationBeginning;
+	return structure->RealizationBeginningMonth;
 	}
 
-char* get_ReestrRecord_realizationending(ReestrRecord* structure)
+char* get_ReestrRecord_realization_beginning_year(ReestrRecord* structure)
 	{
-	return structure->RealizationEnding;
+	return structure->RealizationBeginningYear;
+	}
+
+char* get_ReestrRecord_realization_ending_month(ReestrRecord* structure)
+	{
+	return structure->RealizationEndingMonth;
+	}
+
+char* get_ReestrRecord_realization_ending_year(ReestrRecord* structure)
+	{
+	return structure->RealizationEndingYear;
 	}
 
 int get_ReestrRecord_price(ReestrRecord* structure)
@@ -46,12 +68,12 @@ int get_ReestrRecord_price(ReestrRecord* structure)
 	return structure->Price;
 	}
 
-int get_ReestrRecord_studentsamount(ReestrRecord* structure)
+int get_ReestrRecord_students_amount(ReestrRecord* structure)
 	{
 	return structure->StudentsAmount;
 	}
 
-int get_ReestrRecord_groupsamount(ReestrRecord* structure)
+int get_ReestrRecord_groups_amount(ReestrRecord* structure)
 	{
 	return structure->GroupsAmount;
 	}
@@ -62,29 +84,42 @@ void set_ReestrRecord_shortname(ReestrRecord* structure, char* ShortName)
 	strcpy(structure->ShortName, ShortName);
 	}
 
-void set_ReestrRecord_realizationbeginning(ReestrRecord* structure, char* RealizationBeginning)
+void set_ReestrRecord_realization_beginning_month(ReestrRecord* structure, char* RealizationBeginning)
 	{
-	structure->RealizationBeginning = (char*)realloc(structure->RealizationBeginning, (strlen(RealizationBeginning) + 1) * sizeof(char));
-	strcpy(structure->RealizationBeginning, RealizationBeginning);
+	structure->RealizationBeginningMonth = (char*)realloc(structure->RealizationBeginningMonth, (strlen(RealizationBeginning) + 1) * sizeof(char));
+	strcpy(structure->RealizationBeginningMonth, RealizationBeginning);
 	}
 
-void set_ReestrRecord_realizationending(ReestrRecord* structure, char* RealizationEnding)
+void set_ReestrRecord_realization_beginning_year(ReestrRecord* structure, char* RealizationBeginning)
 	{
-	structure->RealizationEnding = (char*)realloc(structure->RealizationEnding, (strlen(RealizationEnding) + 1) * sizeof(char));
-	strcpy(structure->RealizationEnding, RealizationEnding);;
+	structure->RealizationBeginningYear = (char*)realloc(structure->RealizationBeginningYear, (strlen(RealizationBeginning) + 1) * sizeof(char));
+	strcpy(structure->RealizationBeginningYear, RealizationBeginning);
 	}
+
+void set_ReestrRecord_realization_ending_month(ReestrRecord* structure, char* RealizationEnding)
+	{
+	structure->RealizationEndingMonth = (char*)realloc(structure->RealizationEndingMonth, (strlen(RealizationEnding) + 1) * sizeof(char));
+	strcpy(structure->RealizationEndingMonth, RealizationEnding);
+	}
+
+void set_ReestrRecord_realization_ending_year(ReestrRecord* structure, char* RealizationEnding)
+	{
+	structure->RealizationEndingYear = (char*)realloc(structure->RealizationEndingYear, (strlen(RealizationEnding) + 1) * sizeof(char));
+	strcpy(structure->RealizationEndingYear, RealizationEnding);
+	}
+
 
 void set_ReestrRecord_price(ReestrRecord* structure, int Price)
 	{
 	structure->Price = Price;
 	}
 
-void set_ReestrRecord_studentsamount(ReestrRecord* structure, int StudentsAmount)
+void set_ReestrRecord_students_amount(ReestrRecord* structure, int StudentsAmount)
 	{
 	structure->StudentsAmount = StudentsAmount;
 	}
 
-void set_ReestrRecord_groupsamount(ReestrRecord* structure, int GroupsAmount)
+void set_ReestrRecord_groups_amount(ReestrRecord* structure, int GroupsAmount)
 	{
 	structure->GroupsAmount = GroupsAmount;
 	}
