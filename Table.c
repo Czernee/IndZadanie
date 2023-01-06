@@ -24,14 +24,14 @@ void init_Table(FILE* file, Table* structure)
 		}
 	}
 
-void add_CatalogRecord(Table* structure, TableRecord* record)
+void add_TableRecord(Table* structure, TableRecord* record)
 	{
 	structure->length++;
 	structure->table = (TableRecord**)realloc(structure->table, structure->length * sizeof(TableRecord*));
 	structure->table[structure->length - 1] = record;
 	}
 
-void delete_Catalog(Table* structure)
+void delete_Table(Table* structure)
 	{
 	free(structure->table);
 	}

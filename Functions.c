@@ -1,6 +1,7 @@
 #include "Functions.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char* fread_string(FILE* file) 
     {
@@ -29,4 +30,16 @@ void check_file(FILE* file)
         printf("This file doesn't exist\n");
         exit(1);
         }
+    }
+
+char* separate_date(char* date)
+    {
+    char** info = (char**)calloc(2, sizeof(char*));
+    char* month = strtok(date, ".");
+    char* year = strtok(NULL, "");
+    info[0] = (char*)calloc(strlen(month)+1, sizeof(char));
+    info[1] = (char*)calloc(strlen(year)+1, sizeof(char));
+    strcpy(info[0], month);
+    strcpy(info[1], year);
+    return info;
     }

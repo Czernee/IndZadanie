@@ -140,6 +140,7 @@
     <ClInclude Include="Catalog.h" />
     <ClInclude Include="CatalogRecord.h" />
     <ClInclude Include="Functions.h" />
+    <ClInclude Include="InputRecord.h" />
     <ClInclude Include="Reestr.h" />
     <ClInclude Include="ReestrRecord.h" />
     <ClInclude Include="Table.h" />

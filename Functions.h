@@ -5,6 +5,9 @@
 
 char* fread_string(FILE* file);
 void check_file(FILE* file);
+char* get_month(char* date);
+char* get_year(char* date);
+char* separate_date(char* date);
 
 
 #endif
