@@ -1,31 +1,5 @@
-﻿  Catalog.c
-  CatalogRecord.c
-  Functions.c
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\Functions.c(44,16): warning C4047: return: "char *" отличается по уровням косвенного обращения от "char **"
+﻿  CatalogRecord.c
   Reestr.c
-  ReestrRecord.c
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\ReestrRecord.c(21,2): warning C4047: инициализация: "char **" отличается по уровням косвенного обращения от "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\ReestrRecord.c(24,2): warning C4047: инициализация: "char **" отличается по уровням косвенного обращения от "char *"
-  Table.c
   TableRecord.c
-  main.c
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(32,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "4" имеет тип "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(32,12): warning C4313: printf: конфликт "%d" в строке формата с аргументом 4 типа "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(32,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "5" имеет тип "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(32,12): warning C4313: printf: конфликт "%d" в строке формата с аргументом 5 типа "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(32,284): warning C4474: "printf" : для строки формата передано слишком много аргументов
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(32,284): message : заполнители и их параметры ожидают переменное число аргументов в количестве 6, но было предоставлено 8
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(33,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "4" имеет тип "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(33,12): warning C4313: printf: конфликт "%d" в строке формата с аргументом 4 типа "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(33,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "5" имеет тип "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(33,12): warning C4313: printf: конфликт "%d" в строке формата с аргументом 5 типа "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(33,284): warning C4474: "printf" : для строки формата передано слишком много аргументов
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(33,284): message : заполнители и их параметры ожидают переменное число аргументов в количестве 6, но было предоставлено 8
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(34,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "4" имеет тип "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(34,12): warning C4313: printf: конфликт "%d" в строке формата с аргументом 4 типа "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(34,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "5" имеет тип "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(34,12): warning C4313: printf: конфликт "%d" в строке формата с аргументом 5 типа "char *"
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(34,284): warning C4474: "printf" : для строки формата передано слишком много аргументов
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(34,284): message : заполнители и их параметры ожидают переменное число аргументов в количестве 6, но было предоставлено 8
   Создание кода...
   ConsoleApplication2.vcxproj -> D:\VisualStudio\IZ2\ConsoleApplication2\x64\Debug\ConsoleApplication2.exe

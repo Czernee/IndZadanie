@@ -5,11 +5,16 @@
 #include <stdio.h>
 #include <string.h>
 
+//---------------------------------------------------------------------------------
+// Функция создает массив структур ReestrRecord (массив записей файла Reestr.txt)
 Reestr* create_Reestr()
 	{
 	return (Reestr*)calloc(1, sizeof(Reestr));
 	}
 
+//---------------------------------------------------------------------------------
+// Функция "инициализирует" массив структур
+// Вх. данные: файл с записями, структура, на основании которой будет создаваться массив
 void init_Reestr(FILE* file, Reestr* structure)
 	{
 	char* Q = fread_string(file);
@@ -24,6 +29,9 @@ void init_Reestr(FILE* file, Reestr* structure)
 		}
 	}
 
+//---------------------------------------------------------------------------------
+// Функция добавляет запись ReestrRecord
+// Вх. данные: структура, в которую добавляется запись, запись
 void add_ReestrRecord(Reestr* structure, ReestrRecord* record)
 	{
 	structure->length++;
@@ -31,6 +39,9 @@ void add_ReestrRecord(Reestr* structure, ReestrRecord* record)
 	structure->reestr[structure->length - 1] = record;
 	}
 
+//---------------------------------------------------------------------------------
+// Функция освобождает память Reestr
+// Вх. данные: структура
 void delete_Reestr(Reestr* structure)
 	{
 	free(structure->reestr);

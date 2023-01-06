@@ -5,11 +5,16 @@
 #include <stdio.h>
 #include <string.h>
 
+//---------------------------------------------------------------------------------
+// Функция создает массив структур TableRecord (массив записей файла tab_MM_YYYY.txt)
 Table* create_Table()
 	{
 	return (Table*)calloc(1, sizeof(Table));
 	}
 
+//---------------------------------------------------------------------------------
+// Функция "инициализирует" массив структур
+// Вх. данные: файл с записями, структура, на основании которой будет создаваться массив
 void init_Table(FILE* file, Table* structure)
 	{
 	char* L = fread_string(file);
@@ -24,6 +29,9 @@ void init_Table(FILE* file, Table* structure)
 		}
 	}
 
+//---------------------------------------------------------------------------------
+// Функция добавляет запись TableRecord
+// Вх. данные: структура, в которую добавляется запись, запись
 void add_TableRecord(Table* structure, TableRecord* record)
 	{
 	structure->length++;
@@ -31,6 +39,9 @@ void add_TableRecord(Table* structure, TableRecord* record)
 	structure->table[structure->length - 1] = record;
 	}
 
+//---------------------------------------------------------------------------------
+// Функция освобождает память Table
+// Вх. данные: структура
 void delete_Table(Table* structure)
 	{
 	free(structure->table);
