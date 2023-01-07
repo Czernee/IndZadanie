@@ -8,6 +8,7 @@
 #include "Reestr.h"
 #include "Table.h"
 #include "Input.h"
+#include "Output.h"
 
 int main()  
     {
@@ -26,6 +27,9 @@ int main()
 
         Input* input = create_Input();
         init_Input(fin, input);
+
+        Output* output = create_Output();
+        init_Output(catalog, reestr, input, output);
 
         delete_Catalog(catalog);
         delete_Reestr(reestr);
