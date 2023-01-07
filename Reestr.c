@@ -44,5 +44,8 @@ void add_ReestrRecord(Reestr* structure, ReestrRecord* record)
 // ¬х. данные: структура
 void delete_Reestr(Reestr* structure)
 	{
+	for (int i = 0; i < structure->length; i++)
+		delete_ReestrRecord(structure->reestr[i]);
 	free(structure->reestr);
+	free(structure);
 	}

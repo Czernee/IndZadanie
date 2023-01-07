@@ -5,10 +5,21 @@ typedef struct InputRecord
 	{
 	char* Keyword;
 	char* FamilyIO;
-	char* Date;
+	char* Month;
+	char* Year;
 	} InputRecord;
 
-void check_date();
-
+InputRecord* create_InputRecord();
+void init_InputRecord(InputRecord* structure, char* str);
+char* get_InputRecord_keyword(InputRecord* structure);
+char* get_InputRecord_familyio(InputRecord* structure);
+char* get_InputRecord_month(InputRecord* structure);
+char* get_InputRecord_year(InputRecord* structure);
+void set_InputRecord_keyword(InputRecord* structure);
+void set_InputRecord_familyio(InputRecord* structure, char* ShortName);
+void set_InputRecord_month(InputRecord* structure, char* ShortName);
+void set_InputRecord_year(InputRecord* structure, char* ShortName);
+char** separate_InputRecord_string(char* str);
+void delete_InputRecord(InputRecord* structure);
 
 #endif

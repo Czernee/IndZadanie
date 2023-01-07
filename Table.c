@@ -39,10 +39,23 @@ void add_TableRecord(Table* structure, TableRecord* record)
 	structure->table[structure->length - 1] = record;
 	}
 
+FILE* search_Table(char* month, char* year)
+	{
+	char* tmp = (char*)calloc(16, sizeof(char));
+	sprintf(tmp, "tab_%s_%s.txt", month, year);
+	FILE* table = fopen(tmp, "r");
+	check_file(table);
+	free(tmp);
+	return table;
+	}
+
 //---------------------------------------------------------------------------------
 // Функция освобождает память Table
 // Вх. данные: структура
 void delete_Table(Table* structure)
 	{
+	for (int i = 0; i < structure->length; i++)
+		delete_TableRecord(structure->table[i]);
 	free(structure->table);
+	free(structure);
 	}
