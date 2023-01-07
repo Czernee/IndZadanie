@@ -12,7 +12,7 @@
 
 int main()  
     {
-
+    //kek
     FILE* finCatalog = fopen("Catalog.txt", "r");
     FILE* finReestr = fopen("Reestr.txt", "r");
     FILE* fin = fopen("input.txt", "r");
