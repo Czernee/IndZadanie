@@ -48,6 +48,18 @@
     <ClCompile Include="Output.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="TableRecordArr.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputDetail.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ReestrRecordArr.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClCompile>
+    <ClCompile Include="ReestrRecordArr.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Functions.h">
@@ -81,6 +93,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="OutputDetail.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="TableRecordArr.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

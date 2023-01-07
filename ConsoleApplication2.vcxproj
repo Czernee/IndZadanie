@@ -134,6 +134,10 @@
     <ClCompile Include="InputRecord.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Output.c" />
+    <ClCompile Include="OutputDetail.c" />
+    <ClCompile Include="ReestrRecordArr.c" />
+    <ClCompile Include="ReestrRecordArr.h" />
+    <ClCompile Include="TableRecordArr.c" />
     <ClCompile Include="Reestr.c" />
     <ClCompile Include="ReestrRecord.c" />
     <ClCompile Include="Table.c" />
@@ -147,6 +151,7 @@
     <ClInclude Include="InputRecord.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="OutputDetail.h" />
+    <ClInclude Include="TableRecordArr.h" />
     <ClInclude Include="Reestr.h" />
     <ClInclude Include="ReestrRecord.h" />
     <ClInclude Include="Table.h" />
