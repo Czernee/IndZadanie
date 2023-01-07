@@ -30,20 +30,20 @@ char* fread_string(FILE* file)
 //--------------------------------------------------
 // ‘ункци€ провер€ет, существует ли файл
 // ¬х. данные: файл
-void check_file(FILE* file)
+int check_file(FILE* file)
     {
     if (file == NULL)
         {
-        printf("This file doesn't exist\n");
-        exit(1);
+        return 0;
         }
+    return 1;
     }
 //--------------------------------------------------
 
 //--------------------------------------------------
 // ‘ункци€ раздел€ет дату формата "MM.YYYY" на мес€ц и год
 // ¬х. данные: дата 
-char* separate_date(char* date)
+char** separate_date(char* date)
     {
     char** info = (char**)calloc(2, sizeof(char*));
     char* month = strtok(date, ".");

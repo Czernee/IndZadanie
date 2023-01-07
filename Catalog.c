@@ -49,5 +49,8 @@ void add_CatalogRecord(Catalog* structure, CatalogRecord* record)
 // ¬х. данные: структура
 void delete_Catalog(Catalog* structure)
 	{
+	for (int i = 0; i < structure->length; i++)
+		delete_CatalogRecord(structure->catalog[i]);
 	free(structure->catalog);
+	free(structure);
 	}

@@ -130,7 +130,10 @@
     <ClCompile Include="Catalog.c" />
     <ClCompile Include="CatalogRecord.c" />
     <ClCompile Include="Functions.c" />
+    <ClCompile Include="Input.c" />
+    <ClCompile Include="InputRecord.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="Output.c" />
     <ClCompile Include="Reestr.c" />
     <ClCompile Include="ReestrRecord.c" />
     <ClCompile Include="Table.c" />
@@ -140,7 +143,10 @@
     <ClInclude Include="Catalog.h" />
     <ClInclude Include="CatalogRecord.h" />
     <ClInclude Include="Functions.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="InputRecord.h" />
+    <ClInclude Include="Output.h" />
+    <ClInclude Include="OutputDetail.h" />
     <ClInclude Include="Reestr.h" />
     <ClInclude Include="ReestrRecord.h" />
     <ClInclude Include="Table.h" />
