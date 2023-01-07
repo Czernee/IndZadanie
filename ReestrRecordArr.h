@@ -13,6 +13,6 @@ typedef struct ReestrRecordArr
 ReestrRecordArr* create_ReestrRecordArr();
 void init_ReestrRecordArr(ReestrRecordArr*);
 void push_to_ReestrRecordArr(ReestrRecord*, ReestrRecordArr*);
-void delete_ReestreRecordArr(ReestrRecordArr*);
+void delete_ReestrRecordArr(ReestrRecordArr*);
 
 #endif

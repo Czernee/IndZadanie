@@ -96,7 +96,7 @@ void set_CatalogRecord_fullname(CatalogRecord* structure, char* FullName)
 	}
 
 //---------------------------------------------------------------------
-// Функция делит запись Catalog.txt на поля и присваивает их 
+// Функция делит запись Catalog.txt на части и присваивает их значения соответствующим полям
 // Вх. данные: строка, которую нужно поделить
 char** separate_CatalogRecord_string(char* str)
 	{
@@ -117,7 +117,7 @@ char** separate_CatalogRecord_string(char* str)
 	}
 
 //---------------------------------------------------------------------
-// Функция освообждает память
+// Функция освообждает память структуры CatalogRecord
 void delete_CatalogRecord(CatalogRecord* structure)
 	{
 	free(structure->ShortName);
