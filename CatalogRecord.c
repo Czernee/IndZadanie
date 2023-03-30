@@ -3,17 +3,21 @@
 #include <stdlib.h>
 #include <string.h>
 
-//---------------------------------------------------------------------
-// Функция выделяет место для записи строки из файла Catalog.txt
-// Вх. данные: ничего
+/**
+* \brief Выделяет память и создает структуру CatalogRecord (запись файла Catalog.txt)
+* \return выделение места под структуру CatalogRecord
+*/
 CatalogRecord* create_CatalogRecord()
 	{
 	return (CatalogRecord*)calloc(1, sizeof(CatalogRecord));
 	}
 
-//---------------------------------------------------------------------
-// Функция заносит данные строки Catalog.txt в структуру CatalogRecord (инициализирует)
-// Вх. данные: инициализируемая структура, строка Catalog.txt
+/**
+* \brief Функция "инициализирует" структуру
+* \param structure структура, полям которой будут присваиваться значения
+* \param str строка файла Catalog.txt
+* \return инициализированная структура CatalogRecord
+*/
 void init_CatalogRecord(CatalogRecord* structure, char* str)
 	{
 	//выделение места для имен
@@ -30,74 +34,97 @@ void init_CatalogRecord(CatalogRecord* structure, char* str)
 	free(info);
 	}
 
-//---------------------------------------------------------------------
-// Функция возвращает краткое название программы записи Catalog.txt
-// Вх. данные: структура
+/**
+* \brief Функция возвращает краткое название программы записи Catalog.txt
+* \param structure структура, краткое название которой нужно взять
+* \return краткое название программы записи Catalog.txt
+*/
 char* get_CatalogRecord_shortname(CatalogRecord* structure)
 	{
 	return structure->ShortName;
 	}
 
-//---------------------------------------------------------------------
-// Функция возвращает общее количество часов по программе записи Catalog.txt
-// Вх. данные: структура
+/**
+* \brief Функция возвращает общее количество часов по программе записи Catalog.txt
+* \param structure структура, общее количество часов по программе которой нужно взять
+* \return общее количество часов Catalog.txt
+*/
 int get_CatalogRecord_hours(CatalogRecord* structure)
 	{
 	return structure->Hours;
 	}
 
-//---------------------------------------------------------------------
-// Функция возвращает количество часов аудиторных занятий записи Catalog.txt
-// Вх. данные: структура
-int get_CatalogRecord_audhours(CatalogRecord* structure)
+/**
+* \brief Функция возвращает количество часов аудиторных занятий записи Catalog.txt
+* \param structure структура, количество часов аудиторных занятий которой нужно взять
+* \return количество часов аудиторных занятий записи Catalog.txt
+*/
+int get_CatalogRecord_aud_hours(CatalogRecord* structure)
 	{
 	return structure->AudHours;
 	}
-//---------------------------------------------------------------------
-// Функция возвращает полное наименование программы записи Catalog.txt
-// Вх. данные: структура
+
+/**
+* \brief Функция возвращаетполное наименование программы записи Catalog.txt
+* \param structure структура, полное наименование программы которой нужно взять
+* \return полное наименование программы записи Catalog.txt
+*/
 char* get_CatalogRecord_fullname(CatalogRecord* structure)
 	{
 	return structure->FullName;
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает имя короткому имени программы в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает имя короткому имени программы в структуре
+* \param structure структура, которой нужно присвоить краткое имя
+* \param ShortName присваиваемое краткое имя
+* \return присвоенное краткое имя
+*/
 void set_CatalogRecord_shortname(CatalogRecord* structure, char* ShortName)
 	{
 	structure->ShortName = (char*)realloc(structure->ShortName, (strlen(ShortName) + 1) * sizeof(char));
 	strcpy(structure->ShortName, ShortName);
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает бщее количество часов по программе в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает общее количество часов по программе в структуре
+* \param structure структура, которой нужно присвоить общее количество часов по программе
+* \param Hours присваиваемое общее количество часов по программе
+* \return присвоенное общее количество часов по программе
+*/
 void set_CatalogRecord_hours(CatalogRecord* structure, int Hours)
 	{
 	structure->Hours = Hours;
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает количество часов аудиторных занятий в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает количество часов аудиторных занятий в структуре
+* \param structure структура, которой нужно присвоить количество часов аудиторных занятий
+* \param AudHours присваиваемое количество часов аудиторных занятий
+* \return присвоенное количество часов аудиторных занятий
+*/
 void set_CatalogRecord_aud_hours(CatalogRecord* structure, int AudHours)
 	{
 	structure->AudHours = AudHours;
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает полное наименование программы в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает полное наименование программы в структуре
+* \param structure структура, которой нужно присвоить полное наименование программы
+* \param FullName присваиваемое полное наименование программы
+* \return присвоенное полное наименование программы
+*/
 void set_CatalogRecord_fullname(CatalogRecord* structure, char* FullName)
 	{
 	structure->FullName = (char*)realloc(structure->FullName, (strlen(FullName) + 1) * sizeof(char));
 	strcpy(structure->FullName, FullName);
 	}
 
-//---------------------------------------------------------------------
-// Функция делит запись Catalog.txt на части и присваивает их значения соответствующим полям
-// Вх. данные: строка, которую нужно поделить
+/**
+* \brief Функция делит запись Catalog.txt на части и присваивает их значения соответствующим полям
+* \param str строка, которую нужно поделить
+* \return поделенная строка Catalog.txt и присвоенные значения полям
+*/
 char** separate_CatalogRecord_string(char* str)
 	{
 	char** info = (char**)calloc(4, sizeof(char*));
@@ -116,8 +143,11 @@ char** separate_CatalogRecord_string(char* str)
 	return info;
 	}
 
-//---------------------------------------------------------------------
-// Функция освообждает память структуры CatalogRecord
+/**
+* \brief Функция освообждает память структуры CatalogRecord
+* \param structure структура, память которой нужно освободить
+* \return освобожденная память структуры CatalogRecord
+*/
 void delete_CatalogRecord(CatalogRecord* structure)
 	{
 	free(structure->ShortName);

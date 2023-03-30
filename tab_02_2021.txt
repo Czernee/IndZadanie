@@ -1,0 +1,23 @@
+22
+DennisHoward Kumir(1) 9
+DennisHoward Database(1) 4
+DennisHoward OGE 10
+DennisHoward Camp(Summer) 2
+DennisHoward Arduino(2) 8
+DennisHoward Games(2) 10
+DennisHoward Camp(Winter) 4
+DennisHoward Python(2) 1
+DennisHoward Olymp(1) 10
+DennisHoward Scratch(2) 10
+DennisHoward Java(2) 5
+DennisHoward Python(1) 4
+DennisHoward Scratch(1) 5
+DennisHoward Olymp(2) 1
+DennisHoward Database(2) 6
+DennisHoward EGE 3
+DennisHoward Java(1) 10
+DennisHoward Games(1) 2
+DennisHoward Arduino(1) 10
+DennisHoward C/C++(2) 7
+DennisHoward Kumir(2) 3
+DennisHoward C/C++(1) 8

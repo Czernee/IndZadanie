@@ -5,16 +5,21 @@
 #include <stdio.h>
 #include <string.h>
 
-//---------------------------------------------------------------------------------
-// Функция создает массив структур CatalogRecord (массив записей файла Catalog.txt)
+/**
+* \brief Выделяет память и создает массив структур CatalogRecord (массив записей файла Catalog.txt)
+* \return выделение места под массив структур CatalogRecord
+*/
 Catalog* create_Catalog()
 	{
 	return (Catalog*)calloc(1, sizeof(Catalog));
 	}
 
-//---------------------------------------------------------------------------------
-// Функция "инициализирует" массив структур
-// Вх. данные: файл с записями, структура, на основании которой будет создаваться массив
+/**
+* \brief Функция "инициализирует" массив структур
+* \param file входной файл, на основании которого считываются данные
+* \param structure структуры, полям которых будут присваиваться значения
+* \return инициализированные структуры CatalogRecord
+*/
 void init_Catalog(FILE* file, Catalog* structure)
 	{
 	char* koefs = fread_string(file);
@@ -24,6 +29,7 @@ void init_Catalog(FILE* file, Catalog* structure)
 	free(koefs);
 	char* N = fread_string(file);
 	structure->length = atoi(N);
+	free(N);
 	structure->catalog = (CatalogRecord**)calloc(structure->length, sizeof(CatalogRecord*));
 	for (int i = 0; i < structure->length; i++)
 		{
@@ -31,12 +37,16 @@ void init_Catalog(FILE* file, Catalog* structure)
 		CatalogRecord* record = create_CatalogRecord();
 		init_CatalogRecord(record, tmp);
 		structure->catalog[i] = record;
+		free(tmp);
 		}
 	}
 
-//---------------------------------------------------------------------------------
-// Функция добавляет запись CatalogRecord
-// Вх. данные: структура, в которую добавляется запись, запись
+/**
+* \brief Функция добавляет запись CatalogRecord
+* \param structure структура Catalog, в которую будет добавляться структура CatalogRecord
+* \param record добавляемая структура
+* \return добавление структуры в структуру Catalog
+*/
 void add_CatalogRecord(Catalog* structure, CatalogRecord* record)
 	{
 	structure->length++;
@@ -44,9 +54,29 @@ void add_CatalogRecord(Catalog* structure, CatalogRecord* record)
 	structure->catalog[structure->length - 1] = record;
 	}
 
-//---------------------------------------------------------------------------------
-// Функция освобождает память Catalog
-// Вх. данные: структура
+/**
+* \brief Функция возвращает
+* \param structure структура Catalog, в которую будет добавляться структура CatalogRecord
+* \param record добавляемая структура
+* \return добавление структуры в структуру Catalog
+*/
+CatalogRecord* get_CatalogRecord_by_shortname(char* shortname, Catalog* catalog)
+	{
+	for (int i = 0; i < catalog->length; i++)
+		{
+		if (!strcmp(get_CatalogRecord_shortname(catalog->catalog[i]), shortname))
+			{
+			return catalog->catalog[i];
+			}
+		}
+	return NULL;
+	}
+
+/**
+* \brief Функция освобождает память Catalog
+* \param structure структура, память которой будет освобождаться
+* \return освобожденная память массива структур Catalog
+*/
 void delete_Catalog(Catalog* structure)
 	{
 	for (int i = 0; i < structure->length; i++)

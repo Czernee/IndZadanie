@@ -5,6 +5,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+* \struct Input
+* \brief Структура для хранения массива структур InputRecord (массив записей файла inputTT.txt)
+* \param input запись файла inputTT.txt
+* \param lenght размер структуры
+*/
+
 typedef struct Input
 	{
 	InputRecord** input;

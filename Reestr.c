@@ -5,20 +5,26 @@
 #include <stdio.h>
 #include <string.h>
 
-//---------------------------------------------------------------------------------
-// Функция создает массив структур ReestrRecord (массив записей файла Reestr.txt)
+/**
+* \brief Выделяет память и создает массив структур ReestrRecord (массив записей файла Catalog.txt)
+* \return выделение места под массив структур CatalogRecord
+*/
 Reestr* create_Reestr()
 	{
 	return (Reestr*)calloc(1, sizeof(Reestr));
 	}
 
-//---------------------------------------------------------------------------------
-// Функция "инициализирует" массив структур
-// Вх. данные: файл с записями, структура, на основании которой будет создаваться массив
+/**
+* \brief Функция "инициализирует" массив структур
+* \param file входной файл, на основании которого считываются данные
+* \param structure структуры, полям которых будут присваиваться значения
+* \return инициализированные структуры ReestrRecord
+*/
 void init_Reestr(FILE* file, Reestr* structure)
 	{
 	char* Q = fread_string(file);
 	structure->length = atoi(Q);
+	free(Q);
 	structure->reestr = (ReestrRecord**)calloc(structure->length, sizeof(ReestrRecord*));
 	for (int i = 0; i < structure->length; i++)
 		{
@@ -26,12 +32,16 @@ void init_Reestr(FILE* file, Reestr* structure)
 		ReestrRecord* record = create_ReestrRecord();
 		init_ReestrRecord(record, tmp);
 		structure->reestr[i] = record;
+		free(tmp);
 		}
 	}
 
-//---------------------------------------------------------------------------------
-// Функция добавляет запись ReestrRecord
-// Вх. данные: структура, в которую добавляется запись, запись
+/**
+* \brief Функция добавляет запись ReestrRecord
+* \param structure структура Reestr, в которую будет добавляться структура ReestrRecord
+* \param record добавляемая структура
+* \return добавление структуры в структуру Reestr
+*/
 void add_ReestrRecord(Reestr* structure, ReestrRecord* record)
 	{
 	structure->length++;
@@ -39,9 +49,11 @@ void add_ReestrRecord(Reestr* structure, ReestrRecord* record)
 	structure->reestr[structure->length - 1] = record;
 	}
 
-//---------------------------------------------------------------------------------
-// Функция освобождает память Reestr
-// Вх. данные: структура
+/**
+* \brief Функция освобождает память Reestr
+* \param structure структура, память которой будет освобождаться
+* \return освобожденная память массива структур Reestr
+*/
 void delete_Reestr(Reestr* structure)
 	{
 	for (int i = 0; i < structure->length; i++)

@@ -1,6 +1,24 @@
-50 15 10
-3
-Python(1) 108 72 Programming in Python. Basic level
+60 30 10 
+22
+Database(2) 144 108 Database development. Advanced level
+Java(1) 108 72 Programming in Java. Basic level
+Scratch(2) 108 72 Programming in Scratch. Advanced level
+Python(2) 144 108 Programming in Python. Advanced level
+Scratch(1) 108 72 Programming in Scratch. Basic level
+OGE 144 72 Preparing for OGE in Informatics
+Games(1) 108 72 Computer Graphics in Games
+Arduino(2) 108 72 Programming for Arduino. Advanced level
 EGE 144 72 Preparing for EGE in Informatics
+Kumir(1) 108 36 Programming in Kumir. Basic level
+Java(2) 144 108 Programming in Java. Advanced level
+Olymp(2) 108 72 Olympiad Programming. Advanced level
+Arduino(1) 108 72 Programming for Arduino. Basic level
+C/C++(1) 108 72 Programming in C/C++. Basic level
+Olymp(1) 108 72 Olympiad Programming. Basic level
 C/C++(2) 144 108 Programming in C/C++. Advanced level
-
+Kumir(2) 108 36 Programming in Kumir. Advanced level
+Python(1) 108 72 Programming in Python. Basic level
+Camp(Winter) 108 72 Winter Programming Bootcamp
+Database(1) 144 108 Database development. Basic level
+Games(2) 144 108 Game Development in Unity
+Camp(Summer) 108 72 Summer Programming Bootcamp

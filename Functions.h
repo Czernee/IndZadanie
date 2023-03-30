@@ -3,6 +3,10 @@
 
 #include <stdio.h>
 
+/**
+* \brief Заголовочный файл с некоторыми функциями
+*/
+
 char* fread_string(FILE* file);
 int check_file(FILE* file);
 char* get_month(char* date);

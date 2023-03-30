@@ -4,6 +4,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+* \struct ReestrRecord
+* \brief —одержит запись (строку) файла Reestr.txt
+* \param ShortName краткое наименование программы
+* \param RealizationBeginningMonth мес€ц начала реализации программы
+* \param RealizationBeginningYear год начала реализации программы
+* \param RealizationEndingMonth мес€ц окончани€ реализации программы
+* \param RealizationEndingYear год окончани€ реализации программы
+* \param Price стоимость обучени€ на программе в рубл€х
+* \param StudentsAmount количество обучающихс€ на программе
+* \param GroupsAmount количество групп на программе
+*/
+
 typedef struct ReestrRecord
 	{
 	char* ShortName;

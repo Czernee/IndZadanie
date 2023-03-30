@@ -5,6 +5,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+* \struct Reestr
+* \brief Структура для хранения массива структур ReestrRecord (массив записей файла Reestr.txt)
+* \param reestr массив структур CatalogRecord
+* \param length размер массива структур Catalog
+*/
+
 typedef struct Reestr
 	{
 	ReestrRecord** reestr;

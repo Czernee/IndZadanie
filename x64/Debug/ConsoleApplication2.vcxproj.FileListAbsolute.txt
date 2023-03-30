@@ -1,0 +1,3 @@
+C:\Users\stepa\source\repos\IndZadanie-master\IndZadanie-master\x64\Debug\ConsoleApplication2.exe
+D:\VisualStudio\IZ2\ConsoleApplication2\SFU-Daniil--main\x64\Debug\ConsoleApplication2.exe
+D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\x64\Debug\ConsoleApplication2.exe

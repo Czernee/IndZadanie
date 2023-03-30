@@ -3,6 +3,14 @@
 
 #include <stdio.h>
 
+/**
+* \struct TableRecord
+* \brief Структура для хранения данных записи tab_MM_YYYY.txt
+* \param FamilyIO фамилия и инициалы преподавателя
+* \param ShortName краткое наименование программы
+* \param AudHours количество аудиторных часов, отработанных на программе за месяц
+*/
+
 typedef struct TableRecord
 	{
 	char* FamilyIO;

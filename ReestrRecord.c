@@ -4,17 +4,21 @@
 #include <stdlib.h>
 #include <string.h>
 
-//---------------------------------------------------------------------
-// Функция выделяет место для записи строки из файла Reestr.txt
-// Вх. данные: ничего
+/**
+* \brief Выделяет память и создает структуру ReestrRecord (запись файла Reestr.txt)
+* \return выделение места под структуру ReestrRecord
+*/
 ReestrRecord* create_ReestrRecord()
 	{
 	return (ReestrRecord*)calloc(1, sizeof(ReestrRecord));
 	}
 
-//---------------------------------------------------------------------
-// Функция заносит данные строки Reestr.txt в структуру ReestrRecord (инициализирует)
-// Вх. данные: инициализируемая структура, строка Reestr.txt
+/**
+* \brief Функция "инициализирует" структуру
+* \param structure структура, полям которой будут присваиваться значения
+* \param str строка файла Reestr.txt
+* \return инициализированная структура ReestrRecord
+*/
 void init_ReestrRecord(ReestrRecord* structure, char* str)
 	{
 	//выделение места для имени и дат
@@ -52,25 +56,31 @@ void init_ReestrRecord(ReestrRecord* structure, char* str)
 	free(info2_copy);
 	}
 
-//---------------------------------------------------------------------
-// Функция возвращает краткое название программы записи Reestr.txt
-// Вх. данные: структура
+/**
+* \brief Функция возвращает краткое название программы записи Reestr.txt
+* \param structure структура, краткое название которой нужно взять
+* \return краткое название программы записи Reestr.txt
+*/
 char* get_ReestrRecord_shortname(ReestrRecord* structure)
 	{
 	return structure->ShortName;
 	}
-//---------------------------------------------------------------------
 
-//---------------------------------------------------------------------
-// Функция возвращает месяц начала реализации программы записи Reestr.txt
-// Вх. данные: структура
+/**
+* \brief Функция возвращает месяц начала реализации программы записи Reestr.txt
+* \param structure структура, месяц начала реализации программы которой нужно взять
+* \return месяц начала реализации программы записи Reestr.txt
+*/
 char* get_ReestrRecord_realization_beginning_month(ReestrRecord* structure)
 	{
 	return structure->RealizationBeginningMonth;
 	}
-//---------------------------------------------------------------------
-// Функция возвращает год начала реализации программы записи Reestr.txt
-// Вх. данные: структура
+
+/**
+* \brief Функция возвращает год начала реализации программы записи Reestr.txt
+* \param structure структура, год начала реализации программы которой нужно взять
+* \return год начала реализации программы записи Reestr.txt
+*/
 char* get_ReestrRecord_realization_beginning_year(ReestrRecord* structure)
 	{
 	return structure->RealizationBeginningYear;
@@ -84,110 +94,143 @@ char* get_ReestrRecord_realization_ending_month(ReestrRecord* structure)
 	return structure->RealizationEndingMonth;
 	}
 
-//---------------------------------------------------------------------
-// Функция возвращает год окончания реализации программы записи Reestr.txt
-// Вх. данные: структура
+/**
+* \brief Функция возвращает год окончания реализации программы записи Reestr.txt
+* \param structure структура, год окончания реализации программы которой нужно взять
+* \return год окончания реализации программы записи Reestr.txt
+*/
 char* get_ReestrRecord_realization_ending_year(ReestrRecord* structure)
 	{
 	return structure->RealizationEndingYear;
 	}
 
-//---------------------------------------------------------------------
-// Функция возвращает стоимость обучения на программе записи Reestr.txt
-// Вх. данные: структура
+/**
+* \brief Функция возвращает стоимость обучения на программе записи Reestr.txt
+* \param structure структура, стоимость обучения на программе которой нужно взять
+* \return стоимость обучения на программе записи Reestr.txt
+*/
 int get_ReestrRecord_price(ReestrRecord* structure)
 	{
 	return structure->Price;
 	}
 
-//---------------------------------------------------------------------
-// Функция возвращает количество обучающихся на программе записи Reestr.txt
-// Вх. данные: структура
+/**
+* \brief Функция возвращает количество обучающихся на программе записи Reestr.txt
+* \param structure структура, количество обучающихся на программе которой нужно взять
+* \return количество обучающихся на программе записи Reestr.txt
+*/
 int get_ReestrRecord_students_amount(ReestrRecord* structure)
 	{
 	return structure->StudentsAmount;
 	}
 
-//---------------------------------------------------------------------
-// Функция возвращает количество групп на программе записи Reestr.txt
-// Вх. данные: структура
+/**
+* \brief Функция возвращает количество групп на программе записи Reestr.txt
+* \param structure структура, количество групп на программе которой нужно взять
+* \return  количество групп на программе записи Reestr.txt
+*/
 int get_ReestrRecord_groups_amount(ReestrRecord* structure)
 	{
 	return structure->GroupsAmount;
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает имя короткому имени программы в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает имя короткому наименованию программы в структуре
+* \param structure структура, короткому наименованию которой нужно присвоить имя
+* \return присвоенное короткое наименование
+*/
 void set_ReestrRecord_shortname(ReestrRecord* structure, char* ShortName)
 	{
 	structure->ShortName = (char*)realloc(structure->ShortName, (strlen(ShortName) + 1) * sizeof(char));
 	strcpy(structure->ShortName, ShortName);
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает месяц начала реализации программы в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает месяц начала реализации программы в структуре
+* \param structure структура, которой нужно присвоить месяц начала реализации программы
+* \param RealizationBeginningMonth месяц начала реализации программы
+* \return присвоенный месяц начала реализации программы в структуре
+*/
 void set_ReestrRecord_realization_beginning_month(ReestrRecord* structure, char* RealizationBeginning)
 	{
 	structure->RealizationBeginningMonth = (char*)realloc(structure->RealizationBeginningMonth, (strlen(RealizationBeginning) + 1) * sizeof(char));
 	strcpy(structure->RealizationBeginningMonth, RealizationBeginning);
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает год начала реализации программы в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает год начала реализации программы в структуре
+* \param structure структура, которой нужно присвоить год начала реализации программы
+* \param RealizationBeginningYear год начала реализации программы
+* \return присвоенный год начала реализации программы в структуре
+*/
 void set_ReestrRecord_realization_beginning_year(ReestrRecord* structure, char* RealizationBeginning)
 	{
 	structure->RealizationBeginningYear = (char*)realloc(structure->RealizationBeginningYear, (strlen(RealizationBeginning) + 1) * sizeof(char));
 	strcpy(structure->RealizationBeginningYear, RealizationBeginning);
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает месяц окончания реализации программы в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает месяц окончания реализации программы в структуре
+* \param structure структура, которой нужно присвоить месяц окончания реализации программы
+* \param RealizationBeginningMonth месяц окончания реализации программы
+* \return присвоенный месяц окончания реализации программы в структуре
+*/
 void set_ReestrRecord_realization_ending_month(ReestrRecord* structure, char* RealizationEnding)
 	{
 	structure->RealizationEndingMonth = (char*)realloc(structure->RealizationEndingMonth, (strlen(RealizationEnding) + 1) * sizeof(char));
 	strcpy(structure->RealizationEndingMonth, RealizationEnding);
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает год окончания реализации программы в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает год окончания реализации программы в структуре
+* \param structure структура, которой нужно присвоить год окончания реализации программы
+* \param RealizationBeginningYear год окончания реализации программы
+* \return присвоенный год окончания реализации программы в структуре
+*/
 void set_ReestrRecord_realization_ending_year(ReestrRecord* structure, char* RealizationEnding)
 	{
 	structure->RealizationEndingYear = (char*)realloc(structure->RealizationEndingYear, (strlen(RealizationEnding) + 1) * sizeof(char));
 	strcpy(structure->RealizationEndingYear, RealizationEnding);
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает стоимость обучения на программе в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает стоимость обучения на программе в рублях
+* \param structure структура, которой нужно присвоить стоимость обучения на программе в рублях
+* \param Price стоимость обучения на программе в рублях
+* \return присвоенная стоимость обучения на программе в рублях
+*/
 void set_ReestrRecord_price(ReestrRecord* structure, int Price)
 	{
 	structure->Price = Price;
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает количество обучающихся на программе в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает количество обучающихся на программе
+* \param structure структура, которой нужно присвоить количество обучающихся на программе
+* \param StudentsAmount количество обучающихся на программе
+* \return присвоенное количество обучающихся на программе
+*/
 void set_ReestrRecord_students_amount(ReestrRecord* structure, int StudentsAmount)
 	{
 	structure->StudentsAmount = StudentsAmount;
 	}
 
-//---------------------------------------------------------------------
-// Функция присваивает количество групп на программее в структуре
-// Вх. данные: структура, короткое имя
+/**
+* \brief Функция присваивает количество групп на программе
+* \param structure структура, которой нужно присвоить количество групп на программе
+* \param GroupsAmount количество групп на программе
+* \return присвоенное количество групп на программе
+*/
 void set_ReestrRecord_groups_amount(ReestrRecord* structure, int GroupsAmount)
 	{
 	structure->GroupsAmount = GroupsAmount;
 	}
 
-//---------------------------------------------------------------------
-// Функция делит запись Reestr.txt на поля и присваивает их 
-// Вх. данные: строка, которую нужно поделить
+/**
+* \brief Функция делит запись Reestr.txt на части и присваивает их значения соответствующим полям
+* \param str строка, которую нужно поделить
+* \return поделенная строка Reestr.txt и присвоенные значения полям
+*/
 char** separate_ReestrRecord_string(char* str)
 	{
 	char** info = (char**)calloc(6, sizeof(char*));
@@ -212,10 +255,17 @@ char** separate_ReestrRecord_string(char* str)
 	return info;
 	}
 
-//---------------------------------------------------------------------
-// Функция освообждает память
+/**
+* \brief Функция освообждает память структуры ReestrRecord
+* \param structure структура, память которой нужно освободить
+* \return освобожденная память структуры ReestrRecord
+*/
 void delete_ReestrRecord(ReestrRecord* structure)
 	{
 	free(structure->ShortName);
+	free(structure->RealizationBeginningMonth);
+	free(structure->RealizationBeginningYear);
+	free(structure->RealizationEndingMonth);
+	free(structure->RealizationEndingYear);
 	free(structure);
 	}

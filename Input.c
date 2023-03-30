@@ -5,16 +5,21 @@
 #include <stdio.h>
 #include <string.h>
 
-//---------------------------------------------------------------------------------
-// Функция выделяет память под запись inputTT.txt
+/**
+* \brief Выделяет память и создает массив структур InputRecord (массив записей файла inputTT.txt)
+* \return выделение места под массив структур InputRecord
+*/
 Input* create_Input()
 	{
 	return (Input*)calloc(1, sizeof(Input));
 	}
 
-//---------------------------------------------------------------------------------
-// Функция "инициализирует" входной файл inputTT.txt
-// Вх. данные: входной файл, структура
+/**
+* \brief Функция "инициализирует" массив структур
+* \param file входной файл, на основании которого считываются данные
+* \param structure структуры, полям которых будут присваиваться значения
+* \return инициализированные структуры InputRecord
+*/
 void init_Input(FILE* file, Input* structure)
 	{
 	structure->length = 1;
@@ -25,11 +30,15 @@ void init_Input(FILE* file, Input* structure)
 		InputRecord* record = create_InputRecord();
 		init_InputRecord(record, tmp);
 		structure->input[i] = record;
+		free(tmp);
 		}
 	}
 
-//---------------------------------------------------------------------------------
-// Функция освобождает память Input
+/**
+* \brief Функция освобождает память Input
+* \param structure структура, память которой будет освобождаться
+* \return освобожденная память массива структур Input
+*/
 void delete_Input(Input* structure)
 	{
 	for (int i = 0; i < structure->length; i++)

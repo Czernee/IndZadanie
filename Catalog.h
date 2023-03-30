@@ -5,6 +5,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+* \struct Catalog
+* \brief Структура для хранения массива структур CatalogRecord (массив записей файла Catalog.txt)
+* \param K_fot коэффициент фонда оплаты труда
+* \param R_nach коэффициент фонда начислений на оплату труда
+* \param K_sfu коэффициент фонда развития ЮФУ
+* \param catalog массив структур CatalogRecord
+* \param length размер массива структур Catalog
+*/
+
 typedef struct Catalog
 	{
 	int K_fot;
@@ -17,6 +27,7 @@ typedef struct Catalog
 Catalog* create_Catalog();
 void init_Catalog(FILE* file, Catalog* structure);
 void add_CatalogRecord(Catalog* structure, CatalogRecord*);
+CatalogRecord* get_CatalogRecord_by_shortname(char*, Catalog*);
 void delete_Catalog(Catalog* structure);
 
 #endif

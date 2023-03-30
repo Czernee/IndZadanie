@@ -1,6 +1,15 @@
 #ifndef INPUTRECORD_H
 #define INPUTRECORD_H
 
+/**
+* \struct InputRecord
+* \brief Структура для хранения структуры InputRecord (запись файла inputTT.txt)
+* \param Keyword ключевое слово
+* \param FamilyIO фамилия и инициалы преподавателя
+* \param Month месяц расчетного периода программы
+* \param Year год расчетного периода программы
+*/
+
 typedef struct InputRecord
 	{
 	char* Keyword;

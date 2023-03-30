@@ -2,8 +2,15 @@
 #define TABLE_H
 
 #include "TableRecord.h"
+#include "Catalog.h"
 #include <stdlib.h>
 #include <stdio.h>
+
+/**
+* \struct Table
+* \brief Структура для хранения структур TableRecord 
+* \param length размер этого массива
+*/
 
 typedef struct Table
 	{
@@ -14,7 +21,8 @@ typedef struct Table
 Table* create_Table();
 void init_Table(FILE* file, Table* structure);
 void add_TableRecord(Table* structure, TableRecord*);
-FILE* search_Table(char* month, char* year);
+int check_S_aud(TableRecord* record,Table* table,Catalog* catalog);
+int get_S_aud_month(char* shortname,Table* table);
 void delete_Table(Table* structure);
 
 #endif 

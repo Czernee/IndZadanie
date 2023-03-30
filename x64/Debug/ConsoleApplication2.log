@@ -1,5 +1,2 @@
-﻿  Output.c
-  main.c
-D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\main.c(26,39): warning C4133: функция: несовместимые типы - из "Reestr *" в "Catalog *"
-  Создание кода...
-  ConsoleApplication2.vcxproj -> D:\VisualStudio\IZ2\ConsoleApplication2\x64\Debug\ConsoleApplication2.exe
+﻿  main.c
+  ConsoleApplication2.vcxproj -> D:\VisualStudio\IZ2\ConsoleApplication2\ConsoleApplication2\x64\Debug\ConsoleApplication2.exe

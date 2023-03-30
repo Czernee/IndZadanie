@@ -4,6 +4,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+* \struct CatalogRecord
+* \brief Содержит запись (строку) файла Catalog.txt
+* \param ShortName краткое наименование программы
+* \param Hours общее количество часов по программе
+* \param AudHours количество часов аудиторных занятий
+* \param FullName полное наименование программы
+*/
+
 typedef struct CatalogRecord
 	{
 	char* ShortName;

@@ -13,6 +13,18 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+* \struct Output
+* \brief Структура для хранения данных для вывода
+* \param FamilyIO фамилия и инициалы преподавателя
+* \param Month месяц расчетного периода программы
+* \param Year год расчетного периода программы
+* \param Result рассчитанное итоговое значение
+* \param DetailNum_s строка детализации
+* \param DetailNum количество строк детализации
+* \param Details массив структур OuputDetail
+*/
+
 typedef struct Output
 	{
 	char* FamilyIO;
@@ -31,7 +43,9 @@ void set_Output_Month(Output* structure, char* Month);
 void set_Output_Year(Output* structure, char* Year);
 void set_Output_Result(Output* structure, double Result);
 void set_Output_DetailNum_s(Output* structure, char* DetailNum_s);
+void push_to_Details(OutputDetail*, Output*);
 void print_Output(Output* structure);
+void delete_Output(Output* structure);
 
 #endif 
 
